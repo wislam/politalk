@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
 <!--[if IE]>
@@ -14,45 +13,40 @@
 	<link href="http://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+	
 <![endif]-->
 
-<link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/theme.css" rel="stylesheet">
 <link href="css/prettyPhoto.css" rel="stylesheet" type="text/css"/>
 <link href="css/zocial.css" rel="stylesheet" type="text/css"/>
 <link href="css/settings.css" rel="stylesheet" type="text/css"/>
 <link href="css/rohan.css" rel="stylesheet" type="text/css">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
-
 <body>
-	
-	
-	<div id="chart" style="position:absolute"> </div>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
-		<script type="text/javascript"> 
-			
+<div id="chart" style="position:absolute">
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script type="text/javascript"> 
 			var w = 400;
 			var h = 400;
 			var r = h/2;
 			var color = d3.scale.category20c();
-			
 			var data = [
 			{“label”:”Category A”, “value”:20},
 			{“label”:”Category B”, “value”:50},
 			{“label”:”Category C”, “value”:30}];
-			
-			
 			var vis = d3.select(‘#chart’).append(“svg:svg”).data([data]).attr(“width”, w).attr(“height”, h).append(“svg:g”).attr(“transform”, “translate(“ + r + “,” + r + “)”);
 			var pie = d3.layout.pie().value(function(d){return d.value;});
-			
 			// declare an arc generator function
 			var arc = d3.svg.arc().outerRadius(r);
-			
 			// select paths, use arc generator to draw
 			var arcs = vis.selectAll(“g.slice”).data(pie).enter().append(“svg:g”).attr(“class”, “slice”);
 			arcs.append(“svg:path”)
@@ -64,7 +58,6 @@
 			        console.log(arc(d));
 			        return arc(d);
 			    });
-			
 			// add the text
 			arcs.append(“svg:text”).attr(“transform”, function(d){
 			 d.innerRadius = 0;
@@ -72,235 +65,186 @@
 			    return “translate(“ + arc.centroid(d) + “)”;}).attr(“text-anchor”, “middle”).text( function(d, i) {
 			    return data[i].label;}
 			 );
-						
 		</script>
-	
 <!--header-->
-	<div class="header">
-		<div class="container">
+<div class="header">
+	<div class="container">
 		<!--logo-->
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			<i class="fa fa-bars"></i></button>
-					<div class="logo">
-						 <a href="index.html"><img src="img/logo.png" alt="" class="animated bounceInDown" /></a>  
-					</div>
-					<!--menu-->
-					   <nav id="main_menu">
-					<div class="nav-collapse collapse">
-						<ul class="nav nav-pills">
-							<li class="dropdown active"><a href="javascript:{}">Home</a> 
-																				</ul>
-					</div>
-				</nav>
-			</div>
+		<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		<i class="fa fa-bars"></i></button>
+		<div class="logo">
+			<a href="index.html"><img src="img/logo.png" alt="" class="animated bounceInDown"/></a>
 		</div>
-	<!--//header-->
-	
-	<!--page-->
-		<!-- REVOLUTION SLIDER -->
-        <div class="fullwidthbanner-container">
-        	<div class="fullwidthbanner">
-		<ul>
-		<!-- Slide 1 -->
-			<li data-transition="slideright">
-				<img src="img/slider/slider1.jpg" alt="" />
-				
-				<!-- Caption -->
-				<div class="tp-caption lfb" data-x="0" data-y="250" data-speed="2400" data-start="800" data-easing="easeOutExpo">
-					<img src="img/slider/robot1.png" alt="" />
-				</div>
-					
-				<!-- Caption -->
-				<div class="tp-caption lfb" data-x="990" data-y="170" data-speed="1400" data-start="1800" data-easing="easeOutExpo">
-					<img src="img/slider/robot2.png" alt="" />
-				</div>
-				
-				<!-- Caption -->
-				
-				
-				<!-- Caption -->	
-				<div class="caption sft stl" data-x="center" data-y="105" data-speed="1000" data-start="700" data-easing="easeOutExpo">
-					<h3 class="rev-title bold">POLITALK</h3>
-				</div>
-				
-				<!-- Caption -->
-				<div class="caption lfl stl rev-title-sub" data-x="center" data-y="240" data-speed="800" data-start="1100" data-easing="easeOutExpo">
-					Data Mining Twitter for Political Insights
-				</div>
-				
-				<!-- Drop Down -->
-
-				
-				
-				<!-- Caption -->
-				<div class="caption sfb" data-x="center" data-y="320" data-speed="1100" data-start="1500" data-easing="easeOutExpo">
-
-				  <button class="btn pads center-block col-md-12 btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-				    Pick a Politician
-				    <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu pads col-md-12" role="menu" aria-labelledby="dropdownMenu1" style="background:rgba(255,255,255,.5);">
-				    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hillary Clinton (D)</a></li>
-				    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Jim Webb (D)</a></li>
-				    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ted Cruz (R)</a></li>
-				    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Rand Paul (R)</a></li>
-				  </ul>
-              
-				</div>
-			</li>
-			
-		
-		</ul>
-			<div class="tp-bannertimer tp-bottom"></div>
-            </div>
-        </div>
-        <!-- // END REVOLUTION SLIDER -->
-
-		<div id="banner">
-	<div class="container intro_wrapper">
-	<div class="inner_content">
-	
-	<!--welcome-->
-		<div class="welcome_index">
-		<a href="#"><span class="hue_block white normal">PoliTalk</span></a> parses big data through Twitter and creates 
-		<span class="hue">approval rates</span>	without the need to poll millions of  <span>Americans</span>
-		
-		<div id="analytics">
-			<div class="col-md-4">
-			</div>
-				
-			</div>
-			<div class="col-md-8">
-			</div>
-		<div>
-		
-	
-
-
+		<!--menu-->
+		<nav id="main_menu">
+		<div class="nav-collapse collapse">
+			<ul class="nav nav-pills">
+				<li class="dropdown active"><a href="javascript:{}">Home</a>
+			</ul>
 		</div>
-	<!--//welcome-->
-		</div>
-			</div>
-			 <div id="chartContainer" style="height: 300px; width: 50%; margin: 0px auto;">
-   </div>
-
-<p>
-</p>
-				</div>
-				<!--//banner-->
-			
-			<!--//page-->
-		
-		
-		
-		<div class="pad25 hidden-desktop"></div>
+		</nav>
 	</div>
-	
-	<!-- footer -->
-	<div id="footer">
-	<h1>get in touch</h1>
+</div>
+<!--//header-->
+<!--page-->
+<!-- REVOLUTION SLIDER -->
+<div class="fullwidthbanner-container">
+	<div class="fullwidthbanner">
+		<ul>
+			<!-- Slide 1 -->
+			<li data-transition="slideright">
+			<img src="img/slider/slider1.jpg" alt=""/>
+			<!-- Caption -->
+			<div class="tp-caption lfb" data-x="0" data-y="250" data-speed="2400" data-start="800" data-easing="easeOutExpo">
+				<img src="img/slider/robot1.png" alt=""/>
+			</div>
+			<!-- Caption -->
+			<div class="tp-caption lfb" data-x="990" data-y="170" data-speed="1400" data-start="1800" data-easing="easeOutExpo">
+				<img src="img/slider/robot2.png" alt=""/>
+			</div>
+			<!-- Caption -->
+			<!-- Caption -->
+			<div class="caption sft stl" data-x="center" data-y="105" data-speed="1000" data-start="700" data-easing="easeOutExpo">
+				<h3 class="rev-title bold">POLITALK</h3>
+			</div>
+			<!-- Caption -->
+			<div class="caption lfl stl rev-title-sub" data-x="center" data-y="240" data-speed="800" data-start="1100" data-easing="easeOutExpo">
+				 Political Sentiment Towards Ted Cruz 
+			</div>
+			<!-- Drop Down -->
+			<!-- Caption -->
+			<div class="caption lfl stl rev-title-sub" data-x="center" data-y="340" data-speed="800" data-start="1100" data-easing="easeOutExpo">			
+			<button onclick="location.href='http://www.politalk.me/poli/poli/views'">
+     Try Hillary Clinton</button>
+				
+			    
+				 <img src="img/cruz.jpg" alt="Mountain View" style="width:154px;height:174px">
+				
+			
+			</div>
+		<div class="tp-bannertimer tp-bottom">
+		</div>
+	</div>
+</div>
+<!-- // END REVOLUTION SLIDER -->
+<div id="banner">
+	<div class="container intro_wrapper">
+		<div class="inner_content">
+			<!--welcome-->
+			<div class="welcome_index">
+				<a href="#"><span class="hue_block white normal">PoliTalk</span></a> takes Twitter big data from Twitter and generates <span class="hue">approval rates</span> for poll millions of <span>Americans</span>
+				<div id="analytics">
+					<div class="col-md-4">
+					</div>
+				</div>
+				<div class="col-md-8">
+				</div>
+				<div>
+				</div>
+				<!--//welcome-->
+			</div>
+		</div>
+		<div id="chartContainer" style="height: 300px; width: 50%; margin: 0px auto;"></div>
+		<div id="chartContainer2" style="height: 300px; width: 50%; margin: 0px auto; display:none">
+		</div>
+		<p>
+		</p>
+	</div>
+	<!--//banner-->
+	<!--//page-->
+	<div class="pad25 hidden-desktop">
+	</div>
+</div>
+<!-- footer -->
+<div id="footer">
+	<h1>Where do they stand?</h1>
 	<h3 class="center follow">
-	We're social and we'd love to hear from you! Feel free to send us an email, find us on Google Plus, follow us on Twitter and join us on Facebook.</h3>
-	
-	
-	
-	
-	 <script type="text/javascript">
+	Some politicians make claims they don't stand up to. Find out where their loyalties lie by analyzing realtime sentiment on twitter. </h3>
+	<script type="text/javascript">
 	 	window.onload = function () {
 	 	var chart = new CanvasJS.Chart("chartContainer", {
-
 	    title:{
-	        text: "Fruits sold in First Quarter"              
+	        text: "Past 100 Approvals/Disapprovals via Twitter"              
 	    },
 	    data: [//array of dataSeries              
 	    { //dataSeries object
-	
 	         /*** Change type "column" to "bar", "area", "line" or "pie"***/
 	         type: "column",
 	         dataPoints: [
-	         { label: "Negative Count", y: <%= negativeCount=>},
-	         { label: "Neutral Count", y: <%= neutralCount =>},
-	         { label: "Positive Count", y: <%= positiveCount =>},                                    
+	         { label: "Negative Count", y: 51},
+	         { label: "Neutral Count", y: 10},
+	         { label: "Positive Count", y: 30},                                    
 	         ]
 	       }
 	       ]
 	    });
-	
 	    var chart1 = new CanvasJS.Chart("chartContainer1",
 	    {
 	      title:{
-	        text: "Gaming Consoles Sold in 2012"
+	        text: "Which party does he align with?"
 	      },
 	       data: [
 	      {
 	         type: "pie",
 	       showInLegend: true,
 	       dataPoints: [
-	       {  y: 4181563, legendText:"Liberal", indexLabel: <%= liberalCount=>},
-	       {  y: 2175498, legendText:"Libertarian", indexLabel: <%= libertarianCount => },
-	       {  y: 3125844, legendText:"Conservative ", indexLabel: <%= conCount=> },
-	       {  y: 1176121, legendText:"Green" , indexLabel: <%= greenCount=>},
-	  
+	       {  y: 4181563, legendText:"Liberal", indexLabel: "30%"},
+	       {  y: 2175498, legendText:"Libertarian", indexLabel: "12%" },
+	       {  y: 3125844, legendText:"Conservative ", indexLabel: "38%" },
+	       {  y: 1176121, legendText:"Green" , indexLabel: "205"},
 	       ]
 	     }
+	     
 	     ]
 	    });
+	    
+	    	    
 	    chart.render();
 	    chart1.render();
+	  
 	  }
   </script>
-  <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script></head>
-  <body>
-  
-   
-    
-   
-    <div id="chartContainer1" style="height: 300px; width: 50%; margin: 0px auto;">
-   </div>
-  </body>
-  
-  
-  
-  
-  
-  
-	<div class="follow_us">
-		<a href="#1" class="zocial twitter"></a>
-	
-		</div>
+	<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+	</head>
+	<body>
+	<div id="chartContainer1" style="height: 300px; width: 50%; margin: 0px auto;"></div>
+	<div id="chartContainer3" style="height: 300px; width: 50%; margin: 0px auto; display:none">
 	</div>
-	
-	<!-- footer 2 -->
-	<div id="footer2">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
+	</body>
+	<div class="follow_us">
+		
+		<a href="#1" class="zocial twitter"></a>
+	</div>
+</div>
+
+<!-- footer 2 -->
+<div id="footer2">
+	  <img src="img/tedcruz.png" alt="Mountain View" style="width:804px;height:448px">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
 				<div class="copyright">
-						
-							&copy;
-							<script type="text/javascript">
+					 &copy;
+					<script type="text/javascript">
 							//<![CDATA[
 								var d = new Date()
 								document.write(d.getFullYear())
 								//]]>
 								</script>
-							 - HackPrinceton 
-							
-						</div>
-						</div>
-					</div>
+					 - HackPrinceton
 				</div>
-					</div>
-						
-				<!-- up to top -->
-				<a href="#"><i class="go-top hidden-phone hidden-tablet fa fa-angle-double-up"></i></a>
-				<!--//end-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- up to top -->
+<a href="#"><i class="go-top hidden-phone hidden-tablet fa fa-angle-double-up"></i></a>
+<!--//end-->
 <!-- SCRIPTS -->
-
-<script src="js/jquery.js"></script>			
-<script src="js/bootstrap.min.js"></script>	
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="js/jquery.themepunch.plugins.min.js"></script>
 <!-- slider settings -->
 <script>
 	//<![CDATA[
@@ -326,12 +270,20 @@
 //]]>
 </script>
 <script src="js/jquery.touchSwipe.min.js"></script>
-<script src="js/jquery.mousewheel.min.js"></script>				
+<script src="js/jquery.mousewheel.min.js"></script>
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 <!-- carousel -->
 <script type="text/javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
 <script type="text/javascript">
+	function change(){
+		
+		$("#chartContainer").hide();
+		$("#chartContainer1").hide();
+		$("#chartContainer2").show();
+		$("#chartContainer4").show();
+	}
+	
 //<![CDATA[
 jQuery(document).ready(function($) {
 	$("#slider_home").carouFredSel({ width : "100%", height : "auto",
