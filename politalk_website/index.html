@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<link href="css/style.css" rel="stylesheet">
+		
+
+		
+	</head>
+	<body>
+		
+		<div class="dropdown pads center-div" style="margin-right:15%;margin-top:1.5%;">
+		  <button class="btn pads center-block col-md-12 btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		    Pick a Politican
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu pads col-md-12" role="menu" aria-labelledby="dropdownMenu1" style="background:rgba(255,255,255,.5);">
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hillary Clinton (D)</a></li>
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Jim Webb (D)</a></li>
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ted Cruz (R)</a></li>
+		    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Rand Paul (R)</a></li>
+
+		  </ul>
+		</div>
+		
+		<div class="row" style="background-color:rgba(52,152,219,.5);">
+			<div class="col-md-6">
+			  <img style="height:50%;width:50%;margin-right:auto;margin-left:auto;display:block;margin-top:5%;" class="img-circle" src="http://purrfectcatnames.com/wp-content/uploads/2013/11/Gray-Cat-MorgueFile-Nov16th-2013.jpg">
+			</div>
+			<div class="col-md-6" style="margin-top:130px">
+				
+				<div class="progress block-center" style="width: 80%;">
+				    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+				        60%
+				    </div>
+
+				</div>
+			</div>
+		</div>
+		      
+		<div class="row" style="background-color: rgba(231,76,60,.5);">
+		<div class="col-md-6">
+			<script type="text/javascript">
+				console.log("You are in!");
+		 	window.onload = function () {
+		    var chart1 = new CanvasJS.Chart("chartContainer1",
+		    {
+		      title:{
+		        text: "Gaming Consoles Sold in 2012"
+		      },
+		       data: [
+		      {
+		         type: "pie",
+		       showInLegend: true,
+		       dataPoints: [
+			       
+			       
+			 
+		       {  y: 4181563, legendText:"Liberal", indexLabel: <%= liberalCount=>},
+		       {  y: 2175498, legendText:"Libertarian", indexLabel: <%= libertarianCount => },
+		       {  y: 3125844, legendText:"Conservative ", indexLabel: <%= conCount=> },
+		       {  y: 1176121, legendText:"Green" , indexLabel: <%= greenCount=>}
+		       ]
+		     }
+		     ]
+		    });
+		    console.log(chart1);
+
+		    chart1.render();
+		  	}
+	  		</script>
+	  		<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script></head>
+		</div>
+		<div class="col-md-6">
+			<ul class="list-unstyled" style="margin-top:7.5%;">
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+				<li class="lolz"> lol </li>
+			</ul>
+		</div>
+		</div>
+		<div class="row">
+			<h1 class="text-center"> LIVE FEED BRO </h1>
+		</div>
+	</body>
+</html>
